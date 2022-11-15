@@ -1,3 +1,4 @@
+package BASICJAVAPROBLEM;
 
 //Checking the the user is adult or not
 import java.util.Scanner;
