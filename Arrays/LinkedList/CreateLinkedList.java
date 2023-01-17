@@ -1,5 +1,7 @@
 package Arrays.LinkedList;
 
+import javax.swing.text.html.StyleSheet;
+
 public class CreateLinkedList {
     public static class Node {
         int data;
@@ -162,19 +164,100 @@ public class CreateLinkedList {
         return helper(head, key);
     }
 
+    // slow-fast approach
+    public Node FindMid(Node head) {
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;// +1
+            fast = fast.next.next;// +2
+        }
+        return slow;// slow is my mid Node
+    }
+
+    public boolean checkPalindrome() {
+        if (head == null || head.next == null) {
+            return true;
+        }
+        // step1-find mid
+        Node midNode = FindMid(head);
+        // step2-revese 2nd half
+        Node prev = null;
+        Node curr = midNode;
+        Node next;
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        Node right = prev; // right half head
+        Node left = head;
+        // step3-check left half and right half
+        while (right != null) {
+            if (left.data != right.data) {
+                return false;
+            }
+            left = left.next;
+            right = right.next;
+        }
+        return true;
+    }
+
+    public static boolean isCycle() {// Floyd's cycle finding algorithm
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void removeCycle() {
+        // Detect cycle
+        Node slow = head;
+        Node fast = head;
+        boolean cycle = false;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (fast == slow) {
+                cycle = true;
+                break;
+            }
+        }
+        if (cycle == false) {
+            return;
+        }
+        // find meeting point
+        slow = head;
+        Node prev = null;// last node
+        while (slow != fast) {
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;
+        }
+        // remove cycle-> last.next=null
+        prev.next = null;
+    }
+
     public static void main(String[] args) {
         CreateLinkedList ll = new CreateLinkedList();
-        ll.print();
-        ll.addFirst(2);
-        ll.print();
-        ll.addFirst(1);
-        ll.print();
-        ll.addLast(4);
-        ll.print();
-        ll.addLast(5);
-        ll.print();
-        ll.addMiddle(2, 3);
-        ll.print();
+        // ll.print();
+        // ll.addFirst(2);
+        // ll.print();
+        // ll.addFirst(1);
+        // ll.print();
+        // ll.addLast(2);
+        // ll.print();
+        // ll.addLast(1);
+        // ll.print();
+        // ll.addMiddle(2, 3);
+        // ll.print();
         // ll.removeFirst();
         // ll.print();
         // ll.removeLast();
@@ -186,7 +269,17 @@ public class CreateLinkedList {
         // System.out.println(ll.recSearch(10));
         // ll.reverse();
         // ll.print();
-        ll.deleteNthfromEnd(3);
-        ll.print();
+        // ll.deleteNthfromEnd(3);
+        // ll.print();
+        // System.out.println(ll.checkPalindrome());
+        head = new Node(1);
+        Node temp = new Node(2);
+        head.next = temp;
+        head.next.next = new Node(3);
+        head.next.next.next = temp;
+        System.out.println(isCycle());
+        removeCycle();
+        System.out.println(isCycle());
+
     }
 }
