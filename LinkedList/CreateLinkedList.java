@@ -1,7 +1,5 @@
 package LinkedList;
 
-import javax.swing.text.html.StyleSheet;
-
 public class CreateLinkedList {
     public static class Node {
         int data;
