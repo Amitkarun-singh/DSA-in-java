@@ -6,6 +6,76 @@
     "configurations": [
         {
             "type": "java",
+            "name": "treeMap",
+            "request": "launch",
+            "mainClass": "Hashing.HashMap.treeMap",
+            "projectName": "JAVA_e5ffe58e"
+        },
+        {
+            "type": "java",
+            "name": "linkedhashMap",
+            "request": "launch",
+            "mainClass": "Hashing.HashMap.linkedhashMap",
+            "projectName": "JAVA_e5ffe58e"
+        },
+        {
+            "type": "java",
+            "name": "HashMapCode",
+            "request": "launch",
+            "mainClass": "Hashing.HashMap.HashMapCode",
+            "projectName": "JAVA_e5ffe58e"
+        },
+        {
+            "type": "java",
+            "name": "Inorder",
+            "request": "launch",
+            "mainClass": "Tree.binaryTree.treeTraversals.Inorder",
+            "projectName": "JAVA_e5ffe58e"
+        },
+        {
+            "type": "java",
+            "name": "Preorder",
+            "request": "launch",
+            "mainClass": "Tree.binaryTree.treeTraversals.Preorder",
+            "projectName": "JAVA_e5ffe58e"
+        },
+        {
+            "type": "java",
+            "name": "build_tree_preorder",
+            "request": "launch",
+            "mainClass": "Tree.binaryTree.build_tree_preorder",
+            "projectName": "JAVA_e5ffe58e"
+        },
+        {
+            "type": "java",
+            "name": "iterationOnHashMap",
+            "request": "launch",
+            "mainClass": "Hashing.HashMap.iterationOnHashMap",
+            "projectName": "JAVA_e5ffe58e"
+        },
+        {
+            "type": "java",
+            "name": "firstHashMap",
+            "request": "launch",
+            "mainClass": "Hashing.HashMap.firstHashMap",
+            "projectName": "JAVA_e5ffe58e"
+        },
+        {
+            "type": "java",
+            "name": "SubarraySumFinder",
+            "request": "launch",
+            "mainClass": "SubarraySumFinder",
+            "projectName": "JAVA_e5ffe58e"
+        },
+        {
+            "type": "java",
+            "name": "SlidingWindowMaximum",
+            "request": "launch",
+            "mainClass": "tcetSatProblem.SlidingWindowMaximum",
+            "projectName": "JAVA_e5ffe58e"
+        },
+        {
+            "type": "java",
             "name": "diameterTree",
             "request": "launch",
             "mainClass": "Tree.binaryTree.diameterTree",
